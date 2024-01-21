@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Chameleon Online!</title>
+
+    <script type = "module" src = "app.js"></script>
+
+    <link rel = "stylesheet" href = "styles.css"> 
+    <link rel="icon" type="image/x-icon" href="./web_icon.png">
+
+</head>
+<body class = "hidden_content">
+    <!--Before connecting to a game-->
+    <div class = "login_wrapper">
+
+        <!--Title-->
+        <div class = "title_name_input_wrapper">
+
+            <!--Title text-->
+            <div class = "title_wrapper">
+                <p class = "word_play">Play</p>
+                <h1 class = "word_chameleon">Chameleon</h1>
+                <p class = "word_class">Online!</p>
+            </div>
+
+            <!--Enter Name-->
+            <div class = "name_input_wrapper">
+                <input id="name_input" placeholder="Name" id="name_input" type="text" class="text_input">
+                <button id="name_enter" class="submit_button" type="submit">Enter</button>
+            </div>
+        </div>
+
+        <!--3 Options-->
+        <div class = "host_join_rules_wrapper">
+            <button id = "host_game_button" class = "normal_button">Host Game</button>
+            <button id = "join_game_button" class = "normal_button">Join Game</button>
+            <button id = "how_to_play_button" class = "normal_button">How to Play</button>
+        </div>
+
+        <!--Enter Join Code-->
+        <div class="join_game_code_wrapper">
+            <form>
+                <input id="game_pin_input" placeholder="Game PIN" id="game_pin_input" type="number" class="text_input">
+            </form>
+            <button id="game_pin_enter" class="submit_button" type="submit">Enter</button>
+            <button id="back_from_join" class="normal_button">Back</button>
+        </div>
+
+        <!--Rules-->
+        <div class = "rules_wrapper">
+            <p class = "normal_text">
+                Reveal the Chameleon's identity without disclosing the secret word. 
+                If you happen to be the Chameleon, your goal is to blend in with 
+                the other players, evade detection, and deduce the secret word. 
+                <br>
+                <br>
+                Every round, each player announces a one-word clue about the secret
+                word. At the end of the round, players vote out who they think is the
+                most suspicious. The Chameleon then reveals if they were successful.
+                <br>
+                <br>
+                Too many or few players?<br>
+                3 players: If the Chameleon gets caught, they get two guesses at the 
+                secret word.
+                <br>
+                7 or 8 players: After everyone says their word, the host can change
+                the board so that the Chameleon has a harder time figuring out the
+                secret word.
+                <br>
+                <br>
+                Disclaimer: This is a non-profit project made by Max Zhang and some
+                friends out of pure love of the original game. It is meant to 
+                provide ease of play/access while maintaining the overall idea.
+                The project is not affiliated with any of the official publishers 
+                of The Chameleon in any way. Check out the official website <a href="https://bigpotato.com/products/the-chameleon">here.</a>
+                This project is also heavily inspired by another version of online 
+                Chameleon. It aims to fix inconsistent disconnections present 
+                in the other version at the time of this project's creation,
+                and is also more aimed towards in-person play.
+            </p>
+            <button id = "back_from_rules" class = "normal_button">Back</button>
+        </div>
+    </div>
+
+    <!--After connecting to game-->
+    <div class="game_wrapper">
+
+        <!--Name-->
+        <div class="name_wrapper">
+            <p id="name" class="huge_text"></p>
+        </div>
+
+        <!--Code-->
+        <div class="code_wrapper">
+            <p id="code" class="normal_text"></p>
+        </div>
+
+        <!--Edit Table with Database-->
+        <table class="word_table">
+            <tr class="row_1">
+                <td class="col_1"></td>
+                <td class="col_2"></td>
+                <td class="col_3"></td>
+                <td class="col_4"></td>
+            </tr>
+            <tr class="row_2">
+                <td class="col_1"></td>
+                <td class="col_2"></td>
+                <td class="col_3"></td>
+                <td class="col_4"></td>
+            </tr>
+            <tr class="row_3">
+                <td class="col_1"></td>
+                <td class="col_2"></td>
+                <td class="col_3"></td>
+                <td class="col_4"></td>
+            </tr>
+            <tr class="row_4">
+                <td class="col_1"></td>
+                <td class="col_2"></td>
+                <td class="col_3"></td>
+                <td class="col_4"></td>
+            </tr>
+        </table>
+
+        <!--Edit Player List with Database-->
+        <ul id="player_list">
+        </ul>
+    </div>
+
+
+    <!--Non-Host Stuff-->
+    <div class="host_stuff">
+
+        <!--Status-->
+        <!--TODO: Possibly make this have changing "..." at the end-->
+        <p id="waiting_3" class="big_text">Waiting for Host to Start</p>
+        <p id="you_are_the_chameleon" class="big_text">You are the Chameleon!</p>
+        <p id="discover_the_chameleon" class="big_text">Discover the Chameleon!</p>
+    </div> 
+
+    <!--Host Stuff-->
+    <div class="non_host_stuff">
+
+        <!--Start Game-->
+        <button id = "start_game_button" class = "normal_button">Start Game</button>
+
+        <!--Stop Game-->
+        <button id = "stop_game_button" class = "normal_button">Stop Game</button>
+
+        <!--Theme Selection-->
+        <div class="theme_selection">
+            
+            <!--Edit Theme List with database-->
+            <select id="theme_select" class="theme_selection">
+            </select>
+
+            <button id="theme_enter" class="submit_button" type="submit">Select Theme</button>
+        </div>
+    </div>
+</body>
+</html>
