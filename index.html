@@ -15,6 +15,11 @@
     <!--Before connecting to a game-->
     <div class = "login_wrapper">
 
+        <!--Player Count-->
+        <div id = "total_players_wrapper" class = "total_players_wrapper">
+            <p id = "total_players"></p>
+        </div>
+
         <!--Title-->
         <div class = "title_name_input_wrapper">
 
@@ -32,7 +37,7 @@
             </div>
         </div>
 
-        <!--3 Options-->
+        <!--4 Options-->
         <div class = "host_join_rules_wrapper">
             <button id = "host_game_button" class = "normal_button">Host Game</button>
             <button id = "join_game_button" class = "normal_button">Join Game</button>
@@ -43,48 +48,53 @@
         <div class="join_game_code_wrapper">
             <form>
                 <input id="game_pin_input" placeholder="Game PIN" id="game_pin_input" type="number" class="text_input">
+                <button id="game_pin_enter" class="submit_button" type="submit">Join</button>
+                <button id="game_pin_enter_spectator" class="submit_button" type="submit">Spectate</button>
+                <button id="back_from_join" class="normal_button">Back</button>
             </form>
-            <button id="game_pin_enter" class="submit_button" type="submit">Enter</button>
-            <button id="back_from_join" class="normal_button">Back</button>
         </div>
 
         <!--Rules-->
         <div class = "rules_wrapper">
-            <p class = "normal_text">
-                Reveal the Chameleon's identity without disclosing the secret word. 
-                If you happen to be the Chameleon, your goal is to blend in with 
-                the other players, evade detection, and deduce the secret word. 
-                <br>
-                <br>
-                Every round, each player announces a one-word clue about the secret
-                word. At the end of the round, players vote out who they think is the
-                most suspicious. The Chameleon then reveals if they were successful.
-                <br>
-                <br>
-                Too many or few players?<br>
-                3 players: If the Chameleon gets caught, they get two guesses at the 
-                secret word.
-                <br>
-                7 or 8 players: After everyone says their word, the host can change
-                the board so that the Chameleon has a harder time figuring out the
-                secret word.
-                <br>
-                <br>
-                Disclaimer: This is a non-profit project made by Max Zhang and some
-                friends out of pure love of the original game. It is meant to 
-                provide ease of play/access while maintaining the overall idea.
-                The project is not affiliated with any of the official publishers 
-                of The Chameleon in any way. Check out the official website <a href="https://bigpotato.com/products/the-chameleon">here.</a>
-                This project is also heavily inspired by another version of online 
-                Chameleon. It aims to fix inconsistent disconnections present 
-                in the other version at the time of this project's creation,
-                and is also more aimed towards in-person play.
-            </p>
-            <button id = "back_from_rules" class = "normal_button">Back</button>
+            <div class="rules_description_wrapper">
+                <p class = "normal_text">
+                    Reveal the Chameleon's identity without disclosing the secret word. 
+                    If you happen to be the Chameleon, your goal is to blend in with 
+                    the other players, evade detection, and deduce the secret word. 
+                    <br>
+                    <br>
+                    Every round, each player announces a one-word clue about the secret
+                    word. At the end of the round, players vote out who they think is the
+                    most suspicious. The Chameleon then reveals if they were successful.
+                    <br>
+                    <br>
+                    Too many or few players?<br>
+                    3 players: If the Chameleon gets caught, they get two guesses at the 
+                    secret word.
+                    <br>
+                    7 or 8 players: After everyone says their word, the host can change
+                    the board so that the Chameleon has a harder time figuring out the
+                    secret word.
+                    <br>
+                    <br>
+                    Disclaimer: This is a non-profit project made by Max Zhang and some
+                    friends out of pure love of the original game. It is meant to 
+                    provide ease of play/access while maintaining the overall idea.
+                    The project is not affiliated with any of the official publishers 
+                    of The Chameleon in any way. Check out the official website <a href="https://bigpotato.com/products/the-chameleon">here.</a>
+                    This project is also heavily inspired by another version of online 
+                    Chameleon. It aims to fix inconsistent disconnections present 
+                    in the other version at the time of this project's creation,
+                    and is also more aimed towards in-person play.
+                </p>
+            </div>
+            <div class="back_from_rules_wrapper">
+                <button id = "back_from_rules" class = "normal_button">Back</button>
+            </div>
         </div>
     </div>
 
-    <!--After connecting to game-->
+    <!--game stuff-->
     <div class="game_wrapper">
 
         <!--Name-->
@@ -97,68 +107,82 @@
             <p id="code" class="normal_text"></p>
         </div>
 
-        <!--Edit Table with Database-->
-        <table class="word_table">
-            <tr class="row_1">
-                <td class="col_1"></td>
-                <td class="col_2"></td>
-                <td class="col_3"></td>
-                <td class="col_4"></td>
-            </tr>
-            <tr class="row_2">
-                <td class="col_1"></td>
-                <td class="col_2"></td>
-                <td class="col_3"></td>
-                <td class="col_4"></td>
-            </tr>
-            <tr class="row_3">
-                <td class="col_1"></td>
-                <td class="col_2"></td>
-                <td class="col_3"></td>
-                <td class="col_4"></td>
-            </tr>
-            <tr class="row_4">
-                <td class="col_1"></td>
-                <td class="col_2"></td>
-                <td class="col_3"></td>
-                <td class="col_4"></td>
-            </tr>
-        </table>
+        <!--Word Table-->
+        <div class="word_table_wrapper">
+            <table class="word_table">
+                <tr class="row_1">
+                    <td id="r1c1">Lorem Ipsum</td>
+                    <td id="r1c2">Lorem Ipsum</td>
+                    <td id="r1c3">Lorem Ipsum</td>
+                    <td id="r1c4">Lorem Ipsum</td>
+                </tr>
+                <tr class="row_2">
+                    <td id="r2c1">Lorem Ipsum</td>
+                    <td id="r2c2">Lorem Ipsum</td>
+                    <td id="r2c3">Lorem Ipsum</td>
+                    <td id="r2c4">Lorem Ipsum</td>
+                </tr>
+                <tr class="row_3">
+                    <td id="r3c1">Lorem Ipsum</td>
+                    <td id="r3c2">Lorem Ipsum</td>
+                    <td id="r3c3">Lorem Ipsum</td>
+                    <td id="r3c4">Lorem Ipsum</td>
+                </tr>
+                <tr class="row_4">
+                    <td id="r4c1">Lorem Ipsum</td>
+                    <td id="r4c2">Lorem Ipsum</td>
+                    <td id="r4c3">Lorem Ipsum</td>
+                    <td id="r4c4">Lorem Ipsum</td>
+                </tr>
+            </table>
+        </div>
 
-        <!--Edit Player List with Database-->
-        <ul id="player_list">
-        </ul>
-    </div>
+        <!--Player List-->
+        <div class="player_list_wrapper">
+            <ul id="player_list"></ul>
+        </div>
 
+        <!--Spectator List-->
+        <div class="spectator_list_wrapper">
+            <ul id="spectator_list"></ul>
+        </div>
 
-    <!--Non-Host Stuff-->
-    <div class="host_stuff">
+        <!--Switch to/from spectating-->
+        <div class="player_spectator_switch_wrapper">
+            <button id="player_spectator_switch" class="normal_button"></button>
+        </div>
 
         <!--Status-->
         <!--TODO: Possibly make this have changing "..." at the end-->
-        <p id="waiting_3" class="big_text">Waiting for Host to Start</p>
-        <p id="you_are_the_chameleon" class="big_text">You are the Chameleon!</p>
-        <p id="discover_the_chameleon" class="big_text">Discover the Chameleon!</p>
-    </div> 
+        <div id="status_wrapper" class="status_wrapper">
+            <p id="status" class="big_text">Waiting for Host to Start</p>
+        </div>
+
+        <!--TODO: Add timer display-->
+
+    </div>
 
     <!--Host Stuff-->
-    <div class="non_host_stuff">
+    <div class="host_stuff_wrapper">
 
         <!--Start Game-->
-        <button id = "start_game_button" class = "normal_button">Start Game</button>
-
-        <!--Stop Game-->
-        <button id = "stop_game_button" class = "normal_button">Stop Game</button>
+        <div class="start_stop_game_button_wrapper">
+            <button id = "start_stop_game_button" class = "normal_button">Start Game</button>
+        </div>
 
         <!--Theme Selection-->
-        <div class="theme_selection">
+        <div class="theme_selection_wrapper">
             
             <!--Edit Theme List with database-->
-            <select id="theme_select" class="theme_selection">
-            </select>
+            <select id="theme_select" class="theme_selection"></select>
 
             <button id="theme_enter" class="submit_button" type="submit">Select Theme</button>
         </div>
+
+        <!--TODO: add timer buttons-->
     </div>
+
+    <!--Player id-->
+    <p id="player_id" style="display: none;"></p>
 </body>
 </html>
